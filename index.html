@@ -1,0 +1,148 @@
+﻿<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Kattis Badge Displayer</title>
+    <meta name="description" content="A display for Kattis badges.">
+    <meta name="author" content="SitePoint">
+
+    <meta property="og:title" content="Kattis Badge Displayer">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+    <meta property="og:description" content="A display for Kattis badges.">
+    <meta property="og:image" content="assets/img/icon.png">
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon.png" />
+
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!--<link href="css/paper.css" type="text/css" rel="stylesheet" media="screen,projection" />-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <link rel="stylesheet" href="css/customstyles.css?v=1.0">
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="js/rotate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <template>
+        <div class="badge-element well">
+            <h3 class="badge-name">Name: </h3>
+            <h4 class="desc">Description</h4>
+            <hr>
+            <div class="progress badge-progress">
+                <div class="progress-bar shadow-text" role="progressbar" aria-valuenow="0"
+                     aria-valuemin="0" aria-valuemax="100">
+                    0%
+                </div>
+            </div>
+            <a onclick="toggleBadge(event)"><img class="clickable-image" src="assets/img/dropdown.png" data-rotated="false" /></a>
+            <div class="badge-hide collapse">
+                <hr />
+                <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="Badge Image" class="badge-icon">
+                <hr>
+                <p class="problems-solved">Problems Solved: </p>
+                <p class="problems-left">Problems Left: </p>
+                <b class="completed">Badge Completed: </b>
+            </div>
+        </div>
+    </template>
+    <template>
+        <div>
+            <h2 class="badge-group-title"></h2>
+            <div class="badge-container">
+
+            </div>
+        </div>
+    </template>
+    <div>
+        <template>
+            <div>
+                <a href="" class="btn btn-link" style="display:inline-block"></a>
+            </div>
+        </template>
+    </div>
+    <template>
+        <div class="spoiler">
+            <button class="spoiler-title btn btn-dark" onclick="toggleEditorial(event)" data-toggle="collapse">Editorial</button>
+            <div class="spoiler-content collapse">
+                <p class="editorial">Editorial</p>
+            </div>
+        </div>
+    </template>
+    <template>
+        <div>
+            <h5 style="margin-top:50px">Useful Links</h5>
+        </div>
+    </template>
+    <!--<a href="https://webdocs.cs.ualberta.ca/~contest/index.php"><img src="1.png" height="64" width="64"></a>-->
+    <!--
+    <nav class="navbar navbar-light navbar-expand-md border-bottom border-5 border-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/img/logo.png" height="30" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><b>Home</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://jasoncannon.ca/demo/getting_involved.html">Getting Involved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://jasoncannon.ca/demo/resources.html">Resources</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    -->
+    <div class="p-5 text-center bg-image border-secondary border-bottom border-5"
+         style="
+  background-image: url('assets/img/uofa_opacity_45.png');
+  background-size: cover;
+  height: 150px;
+  margin-bottom: 10px;
+  ">
+
+        <div class="text-white">
+
+            <!-- Visible only on xs -->
+            <div class="d-block d-sm-none"><h1 class="display-6 stroke text-nowrap"><span class="">Programming Contest Club Badges</span></h1></div>
+
+            <!-- Visible only on sm-md -->
+            <div class="d-none d-sm-block d-lg-none"><h1 class="display-6 stroke text-nowrap"><span class="">UofA Programming Contest Club Badges</span></h1></div>
+
+            <!-- Visible only on lg -->
+            <div class="d-none d-lg-block d-xl-none"><h1 class="display-6 stroke text-nowrap"><span class="">University of Alberta Programming Contest Club Badges</span></h1></div>
+
+            <!-- Visible only on xl -->
+            <div class="d-none d-xl-block"><h1 class="display-5 stroke text-nowrap"><span class="">University of Alberta Programming Contest Club Badges</span></h1></div>
+        </div>
+    </div>
+    <div id="file-input-container">
+        <label for="file-selector" style="margin-left:20px">Input your badge progress json here: </label>
+        <input type="file" class="btn inline-child" id="file-selector" accept=".json" style="margin-left:10px">
+        <button id="submitBadgeButton" class="btn btn-primary inline-child">Submit</button>
+        <div id="not-json-alert" class="json-alert alert alert-danger fade inline-child" role="alert">
+            Not a JSON file!
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
