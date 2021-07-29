@@ -1,0 +1,96 @@
+{
+  "badges": [
+    {
+      "group-name": "Difficulty Group",
+      "badges": [
+      {
+      "type": "problems",
+      "name": "Test Badge",
+      "icon": "https://tamaraday.com/wp-content/uploads/2019/07/Icon-Placeholder.png",
+      "ids": [
+        ["testid", "Problem 1", "be smart"],
+        ["testid2", "Problem 2"]
+      ],
+      "langs": {
+
+      },
+      "desc": "solve 2 problems",
+      "links": [
+          [ "https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-string-searching-algorithms/", "Algorithms" ]
+      ]
+    },
+      {
+        "type": "problems",
+        "name": "Test Badge2",
+        "icon": "https://tamaraday.com/wp-content/uploads/2019/07/Icon-Placeholder.png",
+        "ids": [
+          [ "testid3", "Problem 3", "be smart" ],
+          [ "testid4", "Problem 4", "be smarter" ],
+          [ "testid5", "Problem 5", "be smartest" ]
+        ],
+        "langs": {
+
+        },
+        "desc": "solve 3 problems",
+        "links": [
+          [ "https://discuss.codechef.com/t/data-structures-and-algorithms/6599/4", "Data Structures" ],
+          [ "https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-string-searching-algorithms/", "Algorithms" ]
+        ]
+      }
+    ]
+    },
+    {
+      "group-name": "Language Group",
+      "badges": [
+        {
+          "type": "langs",
+          "name": "Test Badge Language",
+          "icon": "https://static.thenounproject.com/png/778835-200.png",
+          "ids": [
+          ],
+          "langs": {
+            "py": 3
+          },
+          "desc": "solve 3 problems in python",
+          "links": [
+          ]
+        },
+        {
+          "type": "langs",
+          "name": "Test Badge Language",
+          "icon": "https://static.thenounproject.com/png/778835-200.png",
+          "ids": [
+          ],
+          "langs": {
+            "py": 3
+          },
+          "desc": "solve 3 problems in python",
+          "links": [
+            [
+              "https://discuss.codechef.com/t/data-structures-and-algorithms/6599/4",
+              "Data Structures"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "template": {
+    "type": "either problems to check if specified problems solved or langs to check if enough problems have been solved using specified languages",
+    "name": "name of badge",
+    "icon": "url of image to be displayed with badge",
+    "ids": [
+      "list of badges in the format of [id, problem name, optional editorial] example below. delete this when copying to make new badge",
+      [ "testid", "Problem 1", "be smart" ],
+      [ "testid2", "Problem 2" ]
+    ],
+    "langs": {
+      "format: language that needs to be solved": "number of problems needed to be solved using language"
+    },
+    "desc": "description of badge, also group badges together by putting them in the same dictionary under a list with key badges. along with the group name with the key group-name. in the end badges should be a list of dictionaries, each one being a dict with 2 elements, the group name and a list of badges",
+    "links": [
+      "additional help links for badge with format [link, link name]",
+      [ "https://discuss.codechef.com/t/data-structures-and-algorithms/6599/4", "Data Structures"]
+    ]
+  }
+}
