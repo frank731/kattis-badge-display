@@ -21,7 +21,7 @@
     },
       {
         "type": "problems",
-        "name": "Test Badge2",
+        "name": "Test Badge 2",
         "icon": "https://tamaraday.com/wp-content/uploads/2019/07/Icon-Placeholder.png",
         "ids": [
           [ "testid3", "Problem 3", "be smart" ],

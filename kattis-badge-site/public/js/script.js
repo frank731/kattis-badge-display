@@ -31,9 +31,9 @@ function displayBadges(data){
         for(j = 0; j < badgeGroup["badges"].length; j++){
              badge = badgeGroup["badges"][j];
              a = document.importNode(item, true);
-
              a.getElementsByClassName("badge-name")[0].textContent = badge["name"];
              a.getElementsByClassName("badge-icon")[0].src = badge["icon"];
+            if (!badge["finished"]) a.getElementsByClassName("badge-icon")[0].style = "filter: grayscale(100%);";
              a.getElementsByClassName("completed")[0].textContent += (badge["finished"]) ? "✔️" : "❌";
              a.getElementsByClassName("desc")[0].textContent = badge["desc"];
 
@@ -140,7 +140,7 @@ function toggleBadge(event){
     }
 }
 
-fetch('badgesprogress.json')
+fetch('http://localhost:5000/badgeprogress')
   .then(response => response.text())
   .then(data => {
     displayBadges(data);
