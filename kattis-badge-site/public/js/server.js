@@ -15,7 +15,7 @@ app.get("/badgeprogress", function (req, res, next) {
 var server = app.listen(5000, () => console.log('Example app listening on port 5000!'))
 setTimeout(function () {
 	server.close();
-}, 10000);
+}, 1000);
 
 
 

@@ -99,7 +99,7 @@ def get_stats(cfg, login_reply, problem_cnt=None):
         out[1].append(str(problem_cnt))
     return dict(zip(out[0], out[1]))
 
-def extract_problems(cfg, login_reply, filename='kattis'):
+def extract_problems(cfg, login_reply, filename='solved'):
     """ Stores solved prolbems and stats in .json file """
     data = {}
     solved = []
@@ -257,12 +257,13 @@ def main(args):
     cnt = extract_problems(cfg, login_reply)
     get_stats(cfg, login_reply, cnt)
 
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Downloads user\'s Kattis statistics.')
     parser.add_argument(dest='email', metavar='kattis_email', type=str, help='Email address used for Kattis account')
     args = parser.parse_args()
     main(args)
-    #badgegetter.main()
+    badgegetter.main()
 
 # update help message
 # import webbrowser, os

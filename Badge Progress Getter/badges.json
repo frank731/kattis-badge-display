@@ -1,15 +1,15 @@
 {
   "badges": [
     {
-      "group-name": "Difficulty Group",
+      "group-name": "Question Group",
       "badges": [
       {
       "type": "problems",
-      "name": "Test Badge",
+      "name": "Actual Badge",
       "icon": "https://tamaraday.com/wp-content/uploads/2019/07/Icon-Placeholder.png",
       "ids": [
-        ["testid", "Problem 1", "be smart"],
-        ["testid2", "Problem 2"]
+        ["electricaloutlets", "Electrical Outlets", "be smart"],
+        ["whacamole", "Whac-A-Mole"]
       ],
       "langs": {
 
@@ -49,7 +49,7 @@
           "ids": [
           ],
           "langs": {
-            "py": 3
+            "Python 3": 3
           },
           "desc": "solve 3 problems in python",
           "links": [
@@ -62,7 +62,7 @@
           "ids": [
           ],
           "langs": {
-            "py": 3
+            "Python 3": 3
           },
           "desc": "solve 3 problems in python",
           "links": [

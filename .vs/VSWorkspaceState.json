@@ -3,7 +3,8 @@
     "",
     "\\kattis-badge-site",
     "\\kattis-badge-site\\public",
-    "\\kattis-badge-site\\public\\js"
+    "\\kattis-badge-site\\public\\js",
+    "\\kattis-badge-site\\src"
   ],
   "SelectedNode": "\\kattis-badge-site\\public\\js\\server.js",
   "PreviewInSolutionExplorer": false

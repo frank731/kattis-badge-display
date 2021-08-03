@@ -13,15 +13,15 @@ class OpenServer(threading.Thread):
 
 def main():
     # open the solved problems file
-    completed = [x.split() for x in open("ids.txt", "r") .read().splitlines()]
-    completed_problems = [x[0] for x in completed]
+    completed = json.load(open("solved.json"))["badges"]
+    completed_problems = [x["id"] for x in completed]
     completed_lang = {}
 
     # convert languages used to solve into a dict with template {"lang": count used to solve}
     for question in completed:
-        if question[2] not in completed_lang:
-            completed_lang[question[2]] = 0
-        completed_lang[question[2]] += 1
+        if question["lang"] not in completed_lang:
+            completed_lang[question["lang"]] = 0
+        completed_lang[question["lang"]] += 1
 
     out_dict = {"badges": []}
     #print(completed)
