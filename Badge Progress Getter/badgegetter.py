@@ -89,6 +89,3 @@ def main():
     print(filename)
     webbrowser.open_new_tab(filename)
 
-
-main()
-
