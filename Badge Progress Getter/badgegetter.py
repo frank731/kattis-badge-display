@@ -4,6 +4,7 @@ import os
 from Naked.toolshed.shell import execute_js
 import threading
 
+
 class OpenServer(threading.Thread):
     def run(self):
         success = execute_js('../kattis-badge-site/public/js/server.js')
