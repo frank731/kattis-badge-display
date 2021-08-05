@@ -3,7 +3,7 @@ Kattis training resource to help you learn and practice many different algorithm
 
 ## Installation
 To install, first download and unzip the repository. 
-Afterwards download your Kattis configuration file [here](https://open.kattis.com/download/kattisrc) and place it in the Badge Progress Getter folder. 
+Afterwards download your Kattis configuration file [here](https://open.kattis.com/download/kattisrc), name it "kattisrc.txt" and place it in the Badge Progress Getter folder. 
 
 ## Requirements
 The python scripts require the requests, beautifulsoup4, and Naked libraries. These can be installed by running `pip install -r requirements.txt` in the repository folder.
