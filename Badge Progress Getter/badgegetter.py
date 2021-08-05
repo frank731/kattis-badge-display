@@ -1,15 +1,13 @@
 import json
 import webbrowser
 import os
-from Naked.toolshed.shell import execute_js
 import threading
+import server
 
 
 class OpenServer(threading.Thread):
     def run(self):
-        success = execute_js('../kattis-badge-site/public/js/server.js')
-        if not success:
-            print("Failed to start local server")
+        server.run()
 
 
 def main():
@@ -25,16 +23,12 @@ def main():
         completed_lang[question["lang"]] += 1
 
     out_dict = {"badges": []}
-    #print(completed)
-    #print(completed_problems)
-    #print(completed_lang)
     with open("badges.json") as f:
         badges = json.load(f)
 
     for group in badges["badges"]:
         next_group = {"group-name": group["group-name"], "badges": []}
         for badge in group["badges"]:
-            #print(badge)
             badge_type = badge["type"]
             name = badge["name"]
             ids = badge["ids"]
@@ -77,9 +71,6 @@ def main():
     with open("badgesprogress.json", "w") as f:
         json.dump(out_dict, f)
 
-    # move output file to html local files
-    os.replace("badgesprogress.json", "../kattis-badge-site/public/js/badgesprogress.json")
-
     # open local server to host progress file so it can be opened by site
     open_server = OpenServer()
     open_server.start()
@@ -89,3 +80,6 @@ def main():
     print(filename)
     webbrowser.open_new_tab(filename)
 
+
+if __name__ == "__main__":
+    main()
