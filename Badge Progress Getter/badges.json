@@ -1,96 +1,1490 @@
 {
-  "badges": [
-    {
-      "group-name": "Question Group",
-      "badges": [
-      {
-      "type": "problems",
-      "name": "Actual Badge",
-      "icon": "https://tamaraday.com/wp-content/uploads/2019/07/Icon-Placeholder.png",
-      "ids": [
-        ["electricaloutlets", "Electrical Outlets", "be smart"],
-        ["whacamole", "Whac-A-Mole"]
-      ],
-      "langs": {
-
-      },
-      "desc": "solve 2 problems",
-      "links": [
-          [ "https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-string-searching-algorithms/", "Algorithms" ]
-      ]
-    },
-      {
-        "type": "problems",
-        "name": "Test Badge 2",
-        "icon": "https://tamaraday.com/wp-content/uploads/2019/07/Icon-Placeholder.png",
-        "ids": [
-          [ "testid3", "Problem 3", "be smart" ],
-          [ "testid4", "Problem 4", "be smarter" ],
-          [ "testid5", "Problem 5", "be smartest" ]
-        ],
-        "langs": {
-
-        },
-        "desc": "solve 3 problems",
-        "links": [
-          [ "https://discuss.codechef.com/t/data-structures-and-algorithms/6599/4", "Data Structures" ],
-          [ "https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-string-searching-algorithms/", "Algorithms" ]
-        ]
-      }
-    ]
-    },
-    {
-      "group-name": "Language Group",
-      "badges": [
+    "badges": [
         {
-          "type": "langs",
-          "name": "Test Badge Language",
-          "icon": "https://static.thenounproject.com/png/778835-200.png",
-          "ids": [
-          ],
-          "langs": {
-            "Python 3": 3
-          },
-          "desc": "solve 3 problems in python",
-          "links": [
-          ]
-        },
-        {
-          "type": "langs",
-          "name": "Test Badge Language",
-          "icon": "https://static.thenounproject.com/png/778835-200.png",
-          "ids": [
-          ],
-          "langs": {
-            "Python 3": 3
-          },
-          "desc": "solve 3 problems in python",
-          "links": [
-            [
-              "https://discuss.codechef.com/t/data-structures-and-algorithms/6599/4",
-              "Data Structures"
+            "group-name": "Intro Badges",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "hello_world",
+                    "ids": [
+                        [
+                            "hello",
+                            "Hello World",
+                            "Search up standard output in the language you are using."
+                        ],
+                        [
+                            "r2",
+                            "R2",
+                            "The numbers make an arithmetic sequence."
+                        ],
+                        [
+                            "fizzbuzz",
+                            "FizzBuzz",
+                            "Use modulus to check divisibility."
+                        ],
+                        [
+                            "bus",
+                            "Bu",
+                            "Start at one and at each stop add 0.5 and then multiply by 2."
+                        ],
+                        [
+                            "greetings2",
+                            "Greetings!",
+                            "The number of e's is the length - 2."
+                        ]
+                    ],
+                    "name": "Getting Started",
+                    "links": [
+                        [
+                            "Links:"
+                        ],
+                        [
+                            "https://usaco.guide/general/input-output?lang=cpp",
+                            "IO Guide"
+                        ]
+                    ],
+                    "desc": "A Hello World for programming challenges"
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "hello_world",
+                    "ids": [
+                        [
+                            "echoechoecho",
+                            "Echo Echo Echo"
+                        ],
+                        [
+                            "chanukah",
+                            "Chanukah Challenge",
+                            "To calculate the number of candles for the menorah use a for loop or an equation to caculate the sum of consecutive numbers."
+                        ],
+                        [
+                            "timeloop",
+                            "Stuck In A Time Loop"
+                        ],
+                        [
+                            "aaah",
+                            "Aaah!"
+                        ]
+                    ],
+                    "name": "Hello World 2.0",
+                    "links": [],
+                    "desc": "Even more introductory problems"
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "pcon_gold",
+                    "ids": [
+                        [
+                            "different",
+                            "A Different Problem",
+                            "Use a data type larger than an int, such as long long in C++."
+                        ],
+                        [
+                            "methodicmultiplication",
+                            "Methodic Multiplication",
+                            "Count the number of S's in each string."
+                        ],
+                        [
+                            "basicprogramming2",
+                            "Basic Programming 2",
+                            "Most of the tasks can be solved by sorting, sets, and for loops."
+                        ]
+                    ],
+                    "name": "Programming Concepts",
+                    "links": [],
+                    "desc": "Nested loops, strings, 2D arrays, etc"
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "psolveeasy_gold",
+                    "ids": [
+                        [
+                            "kleptography",
+                            "Kleptography"
+                        ]
+                    ],
+                    "name": "Problem Solving Starters",
+                    "links": [],
+                    "desc": "Requires some nimble thinking"
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "psolve_gold",
+                    "ids": [
+                        [
+                            "bokforing",
+                            "Accounting"
+                        ],
+                        [
+                            "batteries",
+                            "Exploding Batterie"
+                        ]
+                    ],
+                    "name": "Harder Problem Solving",
+                    "links": [],
+                    "desc": "Requires smart thinking and some analysis of question"
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "old_computer",
+                    "ids": [
+                        [
+                            "ummcode",
+                            "Umm Code"
+                        ],
+                        [
+                            "clockconstruction",
+                            "Clock Construction"
+                        ]
+                    ],
+                    "name": "Thinking in Binary",
+                    "links": [],
+                    "desc": "Binary numbers and ASCII values"
+                }
             ]
-          ]
+        },
+        {
+            "group-name": "Greedy",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "greedy_bronze",
+                    "ids": [
+                        [
+                            "skocimis",
+                            "Skocim"
+                        ],
+                        [
+                            "intergalacticbidding",
+                            "Intergalactic Bidding"
+                        ],
+                        [
+                            "bubbletea",
+                            "Delicious Bubble Te"
+                        ],
+                        [
+                            "backspace",
+                            "Backspace"
+                        ]
+                    ],
+                    "name": "Greedy - Bronze",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "greedy_silver",
+                    "ids": [
+                        [
+                            "racingalphabet",
+                            "Racing Around the Alphabe"
+                        ]
+                    ],
+                    "name": "Greedy - Silver",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "greedy_gold",
+                    "ids": [
+                        [
+                            "chopwood",
+                            "Chopping Wood"
+                        ],
+                        [
+                            "caching",
+                            "Introspective Caching"
+                        ]
+                    ],
+                    "name": "Greedy - Gold",
+                    "links": [],
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "group-name": "Built-in Data Structures",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "array_bronze",
+                    "ids": [
+                        [
+                            "addingwords",
+                            "Adding Word"
+                        ]
+                    ],
+                    "name": "Built-in Data Structures - Bronze",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "array_silver",
+                    "ids": [
+                        [
+                            "raidteams",
+                            "Raid Team"
+                        ],
+                        [
+                            "alehouse",
+                            "Alehouse"
+                        ]
+                    ],
+                    "name": "Built-in Data Structures - Silver",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "array_gold",
+                    "ids": [],
+                    "name": "Built-in Data Structures - Gold",
+                    "links": [],
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "group-name": "Binary Search / Divide-and-Conquer",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "divide_bronze",
+                    "ids": [
+                        [
+                            "guess",
+                            "Guess the Number"
+                        ],
+                        [
+                            "annoyedcoworkers",
+                            "Annoyed Coworker"
+                        ]
+                    ],
+                    "name": "Binary Search / Divide-and-Conquer - Bronze",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "divide_silver",
+                    "ids": [
+                        [
+                            "wifi",
+                            "Wi-F"
+                        ]
+                    ],
+                    "name": "Binary Search / Divide-and-Conquer - Silver",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "divide_gold",
+                    "ids": [],
+                    "name": "Binary Search / Divide-and-Conquer - Gold",
+                    "links": [],
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "group-name": "Dynamic Programming",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "dp_bronze",
+                    "ids": [
+                        [
+                            "magicalcows",
+                            "Magical Cow"
+                        ]
+                    ],
+                    "name": "Dynamic Programming - Bronze",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "dp_silver",
+                    "ids": [
+                        [
+                            "knightsearch",
+                            "Knight Search"
+                        ],
+                        [
+                            "scenes",
+                            "Mountain Scene"
+                        ],
+                        [
+                            "centsavings",
+                            "Cent Saving"
+                        ],
+                        [
+                            "mailbox",
+                            "The Mailbox Manufacturers Problem"
+                        ]
+                    ],
+                    "name": "Dynamic Programming - Silver",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "dp_gold",
+                    "ids": [
+                        [
+                            "coke",
+                            "Coke"
+                        ]
+                    ],
+                    "name": "Dynamic Programming - Gold",
+                    "links": [],
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "group-name": "Geometry",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "geo_bronze",
+                    "ids": [
+                        [
+                            "pop",
+                            "Pop!"
+                        ],
+                        [
+                            "waronweather",
+                            "War on Weather"
+                        ]
+                    ],
+                    "name": "Geometry - Bronze",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "geo_silver",
+                    "ids": [
+                        [
+                            "trilemma",
+                            "Trilemm"
+                        ],
+                        [
+                            "target",
+                            "Targe"
+                        ]
+                    ],
+                    "name": "Geometry - Silver",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "geo_gold",
+                    "ids": [],
+                    "name": "Geometry - Gold",
+                    "links": [],
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "group-name": "String Algorithms",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "yarn_bronze",
+                    "ids": [
+                        [
+                            "bing",
+                            "Bing It On"
+                        ],
+                        [
+                            "lektira",
+                            "Lektir"
+                        ]
+                    ],
+                    "name": "String Algorithms - Bronze",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "yarn_silver",
+                    "ids": [],
+                    "name": "String Algorithms - Silver",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "yarn_gold",
+                    "ids": [
+                        [
+                            "typo",
+                            "Typo"
+                        ],
+                        [
+                            "copyingdna",
+                            "Copying DNA"
+                        ]
+                    ],
+                    "name": "String Algorithms - Gold",
+                    "links": [],
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "group-name": "Graph Searches",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "path_bronze",
+                    "ids": [
+                        [
+                            "wheresmyinternet",
+                            "Where's My Internet??"
+                        ],
+                        [
+                            "shortestpath1",
+                            "Single Source Shortest Path, Non-negative Weigh"
+                        ]
+                    ],
+                    "name": "Graph Searches - Bronze",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "path_silver",
+                    "ids": [
+                        [
+                            "escapewallmaria",
+                            "Escape Wall Mar"
+                        ],
+                        [
+                            "getshorty",
+                            "Get Shorty"
+                        ],
+                        [
+                            "10kindsofpeople",
+                            "10 Kinds of People"
+                        ],
+                        [
+                            "coast",
+                            "Coast Length"
+                        ]
+                    ],
+                    "name": "Graph Searches - Silver",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "path_gold",
+                    "ids": [
+                        [
+                            "visualgo",
+                            "VisuAlgo Online Quiz"
+                        ],
+                        [
+                            "caveexploration2",
+                            "Cave Exploration 2"
+                        ],
+                        [
+                            "knightsfen",
+                            "Knights in Fen"
+                        ]
+                    ],
+                    "name": "Graph Searches - Gold",
+                    "links": [],
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "group-name": "External Data Structures",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "tree_bronze",
+                    "ids": [
+                        [
+                            "bungeebuilder",
+                            "Bungee Builder"
+                        ],
+                        [
+                            "tiredterry",
+                            "Tired Terry"
+                        ]
+                    ],
+                    "name": "External Data Structures - Bronze",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "tree_silver",
+                    "ids": [
+                        [
+                            "almostunionfind",
+                            "Almost Union-Find"
+                        ]
+                    ],
+                    "name": "External Data Structures - Silver",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "tree_gold",
+                    "ids": [
+                        [
+                            "camping",
+                            "Nordic Camping"
+                        ]
+                    ],
+                    "name": "External Data Structures - Gold",
+                    "links": [],
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "group-name": "Number Theory",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "equation_bronze",
+                    "ids": [
+                        [
+                            "primalrepresentation",
+                            "Primal Representation"
+                        ]
+                    ],
+                    "name": "Number Theory - Bronze",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "equation_silver",
+                    "ids": [],
+                    "name": "Number Theory - Silver",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "equation_gold",
+                    "ids": [
+                        [
+                            "porpoises",
+                            "Immortal Porpoise"
+                        ]
+                    ],
+                    "name": "Number Theory - Gold",
+                    "links": [],
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "group-name": "Matching and Flows",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "flow_bronze",
+                    "ids": [],
+                    "name": "Matchings and Flows - Bronze",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "flow_silver",
+                    "ids": [
+                        [
+                            "councilling",
+                            "Councilling"
+                        ]
+                    ],
+                    "name": "Matchings and Flows - Silver",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "flow_gold",
+                    "ids": [],
+                    "name": "Matchings and Flows - Gold",
+                    "links": [],
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "group-name": "Other Graph Theory",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "graph_bronze",
+                    "ids": [
+                        [
+                            "pickupsticks",
+                            "Pick Up Stick"
+                        ],
+                        [
+                            "cats",
+                            "A Feast For C"
+                        ],
+                        [
+                            "weakvertices",
+                            "Weak Vertice"
+                        ]
+                    ],
+                    "name": "Other Graph Theory - Bronze",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "graph_silver",
+                    "ids": [
+                        [
+                            "caveexploration",
+                            "Cave Exploration"
+                        ],
+                        [
+                            "communicationssatellite",
+                            "Communications Satellite"
+                        ],
+                        [
+                            "builddeps",
+                            "Build Dependencie"
+                        ],
+                        [
+                            "allpairspath",
+                            "All Pairs Shortest Path"
+                        ]
+                    ],
+                    "name": "Other Graph Theory - Silver",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "graph_gold",
+                    "ids": [],
+                    "name": "Other Graph Theory - Gold",
+                    "links": [],
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "group-name": "Brute Force",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "brute_bronze",
+                    "ids": [
+                        [
+                            "classpicture",
+                            "Class Picture"
+                        ]
+                    ],
+                    "name": "Brute Force - Bronze",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "brute_silver",
+                    "ids": [
+                        [
+                            "sumdoku",
+                            "Sumdoku"
+                        ]
+                    ],
+                    "name": "Brute Force - Silver",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "brute_gold",
+                    "ids": [
+                        [
+                            "capsules",
+                            "Capsule"
+                        ]
+                    ],
+                    "name": "Brute Force - Gold",
+                    "links": [],
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "group-name": "Math",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "mathg_bronze",
+                    "ids": [
+                        [
+                            "3dprinter",
+                            "3D Printed Statue"
+                        ],
+                        [
+                            "busnumbers2",
+                            "Bus Number"
+                        ],
+                        [
+                            "aboveaverage",
+                            "Above Average"
+                        ]
+                    ],
+                    "name": "Math - Bronze",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "mathg_silver",
+                    "ids": [
+                        [
+                            "zipline",
+                            "Zipline"
+                        ],
+                        [
+                            "bastubad",
+                            "Saun"
+                        ],
+                        [
+                            "dickandjane",
+                            "Dick and Jane"
+                        ],
+                        [
+                            "trip",
+                            "The Trip"
+                        ],
+                        [
+                            "industrialspy",
+                            "An Industrial Spy"
+                        ]
+                    ],
+                    "name": "Math - Silver",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "mathg_gold",
+                    "ids": [
+                        [
+                            "airlinehub",
+                            "Airline Hub"
+                        ]
+                    ],
+                    "name": "Math - Gold",
+                    "links": [],
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "group-name": "Combinatorics",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "ab_bronze",
+                    "ids": [],
+                    "name": "Combinatorics - Bronze",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "ab_silver",
+                    "ids": [
+                        [
+                            "ns/5630096",
+                            "Abstract Painting"
+                        ]
+                    ],
+                    "name": "Combinatorics - Silver",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "ab_gold",
+                    "ids": [
+                        [
+                            "sequences",
+                            "0-1 Sequence"
+                        ],
+                        [
+                            "oddbinom",
+                            "Odd Binomial Coefficien"
+                        ]
+                    ],
+                    "name": "Combinatorics - Gold",
+                    "links": [],
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "group-name": "Linear Algebra",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "linalg_bronze",
+                    "ids": [],
+                    "name": "Linear Algebra - Bronze",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "linalg_silver",
+                    "ids": [
+                        [
+                            "polymul2",
+                            "Polynomial Multiplication 2"
+                        ],
+                        [
+                            "molecules",
+                            "Molecule"
+                        ],
+                        [
+                            "golfbot",
+                            "Golf Bo"
+                        ],
+                        [
+                            "cheeseifyouplease",
+                            "Cheese if you Please"
+                        ]
+                    ],
+                    "name": "Linear Algebra - Silver",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "linalg_gold",
+                    "ids": [
+                        [
+                            "basicbasis",
+                            "Basic B"
+                        ],
+                        [
+                            "aplusb",
+                            "A Plus B"
+                        ],
+                        [
+                            "kinversions",
+                            "K-Inversion"
+                        ],
+                        [
+                            "matchings",
+                            "Matching"
+                        ]
+                    ],
+                    "name": "Linear Algebra - Gold",
+                    "links": [],
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "group-name": "Simulation",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "sim_bronze",
+                    "ids": [
+                        [
+                            "houselawn",
+                            "House Lawn"
+                        ],
+                        [
+                            "applesack",
+                            "Johnny Applesack"
+                        ],
+                        [
+                            "2048",
+                            "2048"
+                        ]
+                    ],
+                    "name": "Simulation - Bronze",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "sim_silver",
+                    "ids": [
+                        [
+                            "jugglingpatterns",
+                            "Juggline Pattern"
+                        ]
+                    ],
+                    "name": "Simulation - Silver",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "sim_gold",
+                    "ids": [],
+                    "name": "Simulation - Gold",
+                    "links": [],
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "group-name": "Messy",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "messy_bronze",
+                    "ids": [
+                        [
+                            "averagespeed",
+                            "Average Speed"
+                        ],
+                        [
+                            "trackingshares",
+                            "Tracking Share"
+                        ],
+                        [
+                            "missingnumber",
+                            "Missing Number"
+                        ],
+                        [
+                            "buildingboundaries",
+                            "Building Boundarie"
+                        ]
+                    ],
+                    "name": "Messy - Bronze",
+                    "links": [],
+                    "desc": "Not too messy yet"
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "messy_silver",
+                    "ids": [
+                        [
+                            "calories",
+                            "Calories from F"
+                        ],
+                        [
+                            "gamerank",
+                            "Game Rank"
+                        ],
+                        [
+                            "universityzoning",
+                            "University Zoning"
+                        ],
+                        [
+                            "mathworksheet",
+                            "Math Workshee"
+                        ]
+                    ],
+                    "name": "Messy - Silver",
+                    "links": [],
+                    "desc": "Getting messier"
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "messy_gold",
+                    "ids": [],
+                    "name": "Messy - Gold",
+                    "links": [],
+                    "desc": "Yuck!"
+                }
+            ]
+        },
+        {
+            "group-name": "Probability",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "coin_bronze",
+                    "ids": [],
+                    "name": "Probability - Bronze",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "coin_silver",
+                    "ids": [],
+                    "name": "Probability - Silver",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "coin_gold",
+                    "ids": [
+                        [
+                            "pegsandlegs",
+                            "Pegs and Leg"
+                        ],
+                        [
+                            "luckydraw",
+                            "Lucky Draw"
+                        ]
+                    ],
+                    "name": "Probability - Gold",
+                    "links": [],
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "group-name": "Game Theory",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "gt_bronze",
+                    "ids": [
+                        [
+                            "twostones",
+                            "Take Two Stone"
+                        ]
+                    ],
+                    "name": "Game Theory - Bronze",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "gt_silver",
+                    "ids": [
+                        [
+                            "snim",
+                            "S-Nim"
+                        ],
+                        [
+                            "amultiplicationgame",
+                            "A Multiplication Game"
+                        ]
+                    ],
+                    "name": "Game Theory - Silver",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "gt_gold",
+                    "ids": [
+                        [
+                            "foolingaround",
+                            "Fooling Around"
+                        ]
+                    ],
+                    "name": "Game Theory - Gold",
+                    "links": [],
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "group-name": "Rocky Mountain Regional Contests",
+            "badges": [
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "rocky",
+                    "ids": [
+                        [
+                            "classy",
+                            "A Classy Problem"
+                        ],
+                        [
+                            "race",
+                            "Amazing Race"
+                        ],
+                        [
+                            "bundles",
+                            "Bundles of Joy"
+                        ],
+                        [
+                            "flippingcards",
+                            "Flipping Card"
+                        ],
+                        [
+                            "everywhere",
+                            "I've Been Everywhere, Man"
+                        ],
+                        [
+                            "keypad",
+                            "Matrix Keypad"
+                        ],
+                        [
+                            "vote",
+                            "Popular Vote"
+                        ],
+                        [
+                            "rubiksrevenge",
+                            "Rubik's Revenge in ... 2D!? 3D?"
+                        ],
+                        [
+                            "recipes",
+                            "Scaling Recipe"
+                        ],
+                        [
+                            "junk",
+                            "Space Junk"
+                        ],
+                        [
+                            "magical3",
+                            "The Magical 3"
+                        ]
+                    ],
+                    "name": "Rocky Mountain Regional Contest 2015",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "rocky",
+                    "ids": [
+                        [
+                            "traffic",
+                            "Bumper-To-Bumper Traffic"
+                        ],
+                        [
+                            "delivering",
+                            "Delivering Good"
+                        ],
+                        [
+                            "election",
+                            "Election"
+                        ],
+                        [
+                            "fizzbuzz",
+                            "FizzBuzz"
+                        ],
+                        [
+                            "flowshop",
+                            "Flow Shop"
+                        ],
+                        [
+                            "numbers",
+                            "Nice Number"
+                        ],
+                        [
+                            "password",
+                            "Password Hacking"
+                        ],
+                        [
+                            "stack",
+                            "Stack Construction"
+                        ],
+                        [
+                            "cups",
+                            "Stacking Cup"
+                        ],
+                        [
+                            "studying",
+                            "Studying For Exam"
+                        ]
+                    ],
+                    "name": "Rocky Mountain Regional Contest 2016",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "rocky",
+                    "ids": [
+                        [
+                            "decisions",
+                            "Decisions, Decision"
+                        ],
+                        [
+                            "flowfree",
+                            "Flow Free"
+                        ],
+                        [
+                            "froshweek2",
+                            "Frosh Week"
+                        ],
+                        [
+                            "heartrate",
+                            "Heart Rate"
+                        ],
+                        [
+                            "hissingmicrophone",
+                            "Hissing Microphone"
+                        ],
+                        [
+                            "initials",
+                            "Initial"
+                        ],
+                        [
+                            "multiplicationgame",
+                            "Multiplication Game"
+                        ],
+                        [
+                            "openpitmining",
+                            "Open-Pit Mining"
+                        ],
+                        [
+                            "palindromicpassword",
+                            "Palindromic Password"
+                        ],
+                        [
+                            "particlecollision",
+                            "Particle Collision"
+                        ],
+                        [
+                            "simplification",
+                            "Polyline Simplification"
+                        ]
+                    ],
+                    "name": "Rocky Mountain Regional Contest 2017",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "rocky",
+                    "ids": [
+                        [
+                            "drivinglanes",
+                            "Driving Lane"
+                        ],
+                        [
+                            "forestforthetrees",
+                            "Forest for the Tree"
+                        ],
+                        [
+                            "gwensgift",
+                            "Gwen's Gif"
+                        ],
+                        [
+                            "hindex",
+                            "H-Index"
+                        ],
+                        [
+                            "plowking",
+                            "Mr. Plow King"
+                        ],
+                        [
+                            "neighborhoodwatch",
+                            "Neighborhood Watch"
+                        ],
+                        [
+                            "qaly",
+                            "Quality-Adjusted Life-Year"
+                        ],
+                        [
+                            "rainbowroadrace",
+                            "Rainbow Road Race"
+                        ],
+                        [
+                            "smallschedule",
+                            "Small Schedule"
+                        ],
+                        [
+                            "treasurespotting",
+                            "Treasure Spotting"
+                        ]
+                    ],
+                    "name": "Rocky Mountain Regional Contest 2018",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "rocky",
+                    "ids": [
+                        [
+                            "fantasydraft",
+                            "Fantasy Draf"
+                        ],
+                        [
+                            "foldingacube",
+                            "Folding a Cube"
+                        ],
+                        [
+                            "hogwarts2",
+                            "Hogwar"
+                        ],
+                        [
+                            "integerdivision",
+                            "Integer Division"
+                        ],
+                        [
+                            "lostlineup",
+                            "Lost Lineup"
+                        ],
+                        [
+                            "molecules",
+                            "Molecule"
+                        ],
+                        [
+                            "pieceofcake2",
+                            "Piece of Cake!"
+                        ],
+                        [
+                            "biggesttriangle",
+                            "The Biggest Triangle"
+                        ],
+                        [
+                            "tiredterry",
+                            "Tired Terry"
+                        ],
+                        [
+                            "typo",
+                            "Typo"
+                        ],
+                        [
+                            "watchlater",
+                            "Watch Later"
+                        ]
+                    ],
+                    "name": "Rocky Mountain Regional Contest 2019",
+                    "links": [],
+                    "desc": ""
+                },
+                {
+                    "type": "problems",
+                    "langs": {},
+                    "icon": "rocky",
+                    "ids": [
+                        [
+                            "antimatterrain",
+                            "Antimatter Rain"
+                        ],
+                        [
+                            "arithmeticdecoding",
+                            "Arithmetic Decoding"
+                        ],
+                        [
+                            "conquest",
+                            "Conque"
+                        ],
+                        [
+                            "distance",
+                            "Distance"
+                        ],
+                        [
+                            "forcedchoice",
+                            "Forced Choice"
+                        ],
+                        [
+                            "interviewqueue",
+                            "Interview Queue"
+                        ],
+                        [
+                            "papersnowflakes",
+                            "Paper Snowflake"
+                        ],
+                        [
+                            "pegsandlegs",
+                            "Pegs and Leg"
+                        ],
+                        [
+                            "stopwatch",
+                            "Stopwatch"
+                        ],
+                        [
+                            "trainboarding",
+                            "Train Boarding"
+                        ],
+                        [
+                            "vaccineefficacy",
+                            "Vaccine Efficacy"
+                        ]
+                    ],
+                    "name": "Rocky Mountain Regional Contest 2020",
+                    "links": [],
+                    "desc": ""
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "template": {
-    "type": "either problems to check if specified problems solved or langs to check if enough problems have been solved using specified languages",
-    "name": "name of badge",
-    "icon": "url of image to be displayed with badge",
-    "ids": [
-      "list of badges in the format of [id, problem name, optional editorial] example below. delete this when copying to make new badge",
-      [ "testid", "Problem 1", "be smart" ],
-      [ "testid2", "Problem 2" ]
-    ],
-    "langs": {
-      "format: language that needs to be solved": "number of problems needed to be solved using language"
-    },
-    "desc": "description of badge, also group badges together by putting them in the same dictionary under a list with key badges. along with the group name with the key group-name. in the end badges should be a list of dictionaries, each one being a dict with 2 elements, the group name and a list of badges",
-    "links": [
-      "additional help links for badge with format [link, link name]",
-      [ "https://discuss.codechef.com/t/data-structures-and-algorithms/6599/4", "Data Structures"]
     ]
-  }
 }

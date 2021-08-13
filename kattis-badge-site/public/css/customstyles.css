@@ -26,15 +26,8 @@
     color: black;
 }
 .badge-icon {
-    /*
-    display: inline-block;
-    height: 100%;
-        right:10px;
-        position: absolute;
-    */
     vertical-align: middle;
     height: 150px;
-    width: 150px;
     object-fit: fill;
 }
 

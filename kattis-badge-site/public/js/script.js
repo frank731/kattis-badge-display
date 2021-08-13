@@ -10,11 +10,9 @@ tempHelp = document.getElementsByTagName("template")[4];
 emptyHelp = tempHelp.content.querySelector("div");
 
 function addProblemLinks(a, badge, k, badgeEl){
-    //.querySelector("a")
     newLink = document.importNode(emptyLink, true);
     newLink.querySelector("a").href = "https://open.kattis.com/problems/" + badge[badgeEl][k][0];
     newLink.querySelector("a").textContent = badge[badgeEl][k][1];
-    //a.getElementsByClassName(className)[0].appendChild(newLink);    
     return newLink;
 }
 
@@ -32,7 +30,7 @@ function displayBadges(data){
              badge = badgeGroup["badges"][j];
              a = document.importNode(item, true);
              a.getElementsByClassName("badge-name")[0].textContent = badge["name"];
-             a.getElementsByClassName("badge-icon")[0].src = badge["icon"];
+             a.getElementsByClassName("badge-icon")[0].src = "./assets/img/" + badge["icon"] + ".png";
             if (!badge["finished"]) a.getElementsByClassName("badge-icon")[0].style = "filter: grayscale(100%);";
              a.getElementsByClassName("completed")[0].textContent += (badge["finished"]) ? "✔️" : "❌";
              a.getElementsByClassName("desc")[0].textContent = badge["desc"];

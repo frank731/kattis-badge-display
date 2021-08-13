@@ -1,11 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Badge Progress Getter",
     "\\kattis-badge-site",
     "\\kattis-badge-site\\public",
-    "\\kattis-badge-site\\public\\js",
     "\\kattis-badge-site\\src"
   ],
-  "SelectedNode": "\\kattis-badge-site\\public\\js\\script.js",
+  "SelectedNode": "\\kattis-badge-site\\public\\index.html",
   "PreviewInSolutionExplorer": false
 }

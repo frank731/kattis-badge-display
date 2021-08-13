@@ -1,4 +1,5 @@
 import json
+import time
 import webbrowser
 import os
 import threading
@@ -22,6 +23,7 @@ def main():
             completed_lang[question["lang"]] = 0
         completed_lang[question["lang"]] += 1
 
+    # read in badges
     out_dict = {"badges": []}
     with open("badges.json") as f:
         badges = json.load(f)
@@ -40,6 +42,7 @@ def main():
             lang_completed = 0
             percent_done = 0
             completed_badge = False
+            # check if badge requires certain amount of problems to be solved in certain language
             if badge_type == "langs":
                 works = True
                 finished = {}
@@ -66,8 +69,7 @@ def main():
             next_group["badges"].append({"type": badge_type, "name": name, "desc": badge["desc"], "icon": badge["icon"], "progress": percent_done, "left": ids,
                                        "completed_problems": finished, "finished": completed_badge, "left_langs": left_langs, "links": badge["links"]})
         out_dict["badges"].append(next_group)
-
-    print(out_dict)
+    # write badge progress to file
     with open("badgesprogress.json", "w") as f:
         json.dump(out_dict, f)
 
@@ -77,7 +79,7 @@ def main():
 
     # open html file
     filename = 'file:///' + os.path.dirname(os.path.dirname(__file__)) + "/kattis-badge-site/public/index.html"
-    print(filename)
+    time.sleep(2)
     webbrowser.open_new_tab(filename)
 
 

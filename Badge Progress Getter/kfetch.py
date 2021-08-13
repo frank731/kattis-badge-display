@@ -10,15 +10,12 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 import badgegetter
 
-# PROBLEM/LANGUAGE PAIRS
-#solved1 =set()
-#solved2 = set()
-
-_EMAIL = None # Required by the user, will be updated in the main function
+_EMAIL = None  # Required by the user, will be updated in the main function
 _DEFAULT_CONFIG = '/usr/local/etc/kattisrc'
 
 _HEADERS = {'User-Agent': 'kattis-accepted-fetch by {}'.format(_EMAIL),
-            'From':_EMAIL}
+            'From': _EMAIL}
+
 
 def get_url(cfg, option, default):
     if cfg.has_option('kattis', option):
@@ -26,14 +23,33 @@ def get_url(cfg, option, default):
     else:
         return 'https://{}/{}'.format(cfg.get('kattis', 'hostname'), default)
 
+
 def get_config():
     """ Returns a ConfigParser object for the .kattisrc file(s) """
     cfg = configparser.ConfigParser()
     if os.path.exists(_DEFAULT_CONFIG):
         cfg.read(_DEFAULT_CONFIG)
-
-    cfg.read("kattisrc.txt")
+    try:
+        if not cfg.read([os.path.join(os.getenv('HOME'), 'kattisrc.txt'),
+                         os.path.join(os.path.dirname(sys.argv[0]), 'kattisrc.txt')]):
+            raise configparser.Error('''\
+    I failed to read in a config file from your home directory or from the
+    same directory as this script. To download a .kattisrc file please visit
+    https://<kattis>/download/kattisrc
+    If you are having difficulty saving the file, save it as kattisrc.txt
+    The file should look something like this:
+    [user]
+    username: yourusername
+    token: *********
+    [kattis]
+    hostname: <kattis>
+    loginurl: https://<kattis>/login
+    submissionurl: https://<kattis>/submit
+    submissionsurl: https://<kattis>/submissions''')
+    except TypeError:
+        cfg.read("kattisrc.txt")
     return cfg
+
 
 def login(login_url, username, password=None, token=None):
     """ Authenticates users """
@@ -43,6 +59,7 @@ def login(login_url, username, password=None, token=None):
     if token:
         login_args['token'] = token
     return requests.post(login_url, data=login_args, headers=_HEADERS)
+
 
 def login_from_config(cfg):
     """ Authenticates user from .kattisrc file """
@@ -57,26 +74,24 @@ def login_from_config(cfg):
     except configparser.NoOptionError:
         pass
     if password is None and token is None:
-        raise configparser.Error('It looks like the .kattisrc file appears to be corrupted.')
+        raise configparser.Error(
+            'It looks like the .kattisrc file appears to be corrupted. Download a new file at https://<kattis>/download/kattisrc')
     loginurl = get_url(cfg, 'loginurl', 'login')
     return login(loginurl, username, password, token)
+
 
 def submissions(submissions_url, cookies):
     """ Get submissions """
     data = {'script': 'true'}
     return requests.get(submissions_url, data=data, cookies=cookies, headers=_HEADERS)
 
+
 def get_problem(keys, soup):
     """ Format individual solved problem """
-    print()
-    print("SOUP")
-    print(soup)
-    print("SOUPPPP")
-    print()
     link = soup.find(class_='name_column').find('a', href=True)['href']
     row = soup.get_text()
-    # print(dict(zip(keys, [link.split('/')[2]] + list(row.strip().split('\n')))))
     return dict(zip(keys, [link.split('/')[2]] + list(row.strip().split('\n'))))
+
 
 def get_stats(cfg, login_reply, problem_cnt=None):
     """ Gets the users stats """
@@ -86,7 +101,7 @@ def get_stats(cfg, login_reply, problem_cnt=None):
         print("TESTING: ", profile_url)
         result = submissions(profile_url, login_reply.cookies)
     except requests.exceptions.RequestException as err:
-        print('Profile connection failed:', err)
+        print('Please ensure your kattisrc file and email are correct. Profile connection failed:', err)
         sys.exit(1)
     soup = BeautifulSoup(result.text, 'html.parser')
     header = soup.find('div', {'class': 'rank clearfix'})
@@ -99,44 +114,39 @@ def get_stats(cfg, login_reply, problem_cnt=None):
         out[1].append(str(problem_cnt))
     return dict(zip(out[0], out[1]))
 
+
 def extract_problems(cfg, login_reply, filename='solved'):
     """ Stores solved prolbems and stats in .json file """
     data = {}
     solved = []
     badges = []
-
-    # CHANGE: users/friggstad instead of problems
-    # CHANGE: Didn't scrape first page as a "test" like Jason did
-    # TODO: make this users/<profile_id> where profile_id is scraped from the kattisrc file
-
     profile_url = get_url(cfg, '', 'users/' + cfg.get('user', 'username'))
 
     subs = []
     problem_cnt = 0
     # should be more than enough pages
     for page_num in range(1000):
-        print("Scraping page:", page_num+1)
+        print("Scraping page:", page_num + 1)
         # CHANGE: problems to
-        submissions_url = profile_url+'?page='+str(page_num)
-
+        submissions_url = profile_url + '?page=' + str(page_num)
 
         try:
             result = submissions(submissions_url, login_reply.cookies)
         except requests.exceptions.RequestException as err:
-            print('Submissions connection failed:', err)
+            print('Submissions connection failed. You may be missing python packages.', err)
             sys.exit(1)
 
         if result.status_code != 200:
-            print('Fetching submissions failed.')
+            print('Fetching submissions failed. Please ensure you are using the correct kattisrc file and email.\
+                If you have recently changed your password please download a new file at https://<kattis>/download/kattisrc')
             if result.status_code == 403:
-                print('Access denied (403)')
+                print('Access denied (403). Try re-downloading your kattisrc file.')
             elif result.status_code == 404:
-                print('Incorrect submissions URL (404)')
+                print('Incorrect submissions URL (404). Could not find that account.')
             else:
                 print('Status code:', result.status_code)
             sys.exit(1)
 
-        # CHANGE: skipped the soup, just do it ourselves
         todo = result.text
 
         page_subs = []
@@ -144,13 +154,13 @@ def extract_problems(cfg, login_reply, filename='solved'):
             # find a <tr> tag indicating the start of a submission entry
             begin = todo.find("<tr data-submission-id")
             if begin == -1: break
-            # eat up everything in the string that came before the location of the tag
+            # look at string that came before the location of the tag
             todo = todo[begin:]
             # find the matching closing tag
             end = todo.find("/tr>")
             # add the entire entry for this submission to the problems[] list
-            page_subs.append(todo[:end+4])
-            todo = todo[end+4:]
+            page_subs.append(todo[:end + 4])
+            todo = todo[end + 4:]
 
         # no submissions on this page, indicates we reached the last page!
         # print number of submissions were scraped
@@ -162,8 +172,6 @@ def extract_problems(cfg, login_reply, filename='solved'):
         # otherwise, add the submissions from this page to the overall subs
         subs += page_subs
 
-    # NOTE: Indentation level changed.
-    # subs is ALL submissions now, not just one page
     for sub in subs:
         # make sure accepted
         if sub.find("Accepted") == -1:
@@ -171,34 +179,18 @@ def extract_problems(cfg, login_reply, filename='solved'):
 
         begin = sub.find("\"lang\"")
         end = sub[begin:].find("<")
-        language = sub[begin+7:begin+end]
+        language = sub[begin + 7:begin + end]
 
         begin = sub.find("/problems/")
         end = sub[begin:].find(">")
-        kattis_id = sub[begin+10:begin+end-1]
+        kattis_id = sub[begin + 10:begin + end - 1]
 
-        path = "/problems/"+kattis_id
+        path = "/problems/" + kattis_id
         begin = sub.find(path)
         end = sub[begin:].find("<")
         # +2 for the >" part
-        problem_name = sub[begin+len(path)+2:begin+end]
+        problem_name = sub[begin + len(path) + 2:begin + end]
 
-        # Instead of printing, you should add them to
-        # something you will use to generate the .json file
-
-        # recommendation: solved is a dictionary where the key is the Kattis ID
-        # and it stores a pair (problem title, set of languages)
-        # for example:
-        # if kattis_id not in solved:
-        #   solved[kattis_id] = (problem_name, set())
-        # solved[kattis_id][1].insert(language) # will insert the language into the set
-        #
-        # This way, each ID is stored once and each language it is solved in
-        # will appear exactly once
-
-
-        #solved1.add(kattis_id)
-        #solved2.add(language)
         print("ID =", kattis_id)
         print("NAME =", problem_name)
         print("LANGUAGE =", language)
@@ -206,19 +198,15 @@ def extract_problems(cfg, login_reply, filename='solved'):
 
         badges.append({"id": kattis_id, "name": problem_name, "lang": language})
 
-
-    # data['stats'] = get_stats(cfg, login_reply, problem_cnt)
-    # with open('{}.json'.format(filename), 'w') as file_out:
-        # json.dump(data, file_out)
-    # return problem_cnt
-
     data['badges'] = badges
     with open('{}.json'.format(filename), 'w') as file_out:
         json.dump(data, file_out)
     return problem_cnt
 
+
 def check(email):
     return bool(re.search('^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$', email))
+
 
 def main(args):
     if not check(args.email):
@@ -227,7 +215,7 @@ def main(args):
 
     _EMAIL = args.email
     _HEADERS = {'User-Agent': 'kattis-accepted-fetch by {}'.format(_EMAIL),
-            'From':_EMAIL}
+                'From': _EMAIL}
 
     try:
         cfg = get_config()
@@ -245,7 +233,7 @@ def main(args):
         sys.exit(1)
 
     if not login_reply.status_code == 200:
-        print('Login failed.')
+        print('Login failed. You may need to re-download your kattisrc file.')
         if login_reply.status_code == 403:
             print('Incorrect username or password/token (403)')
         elif login_reply.status_code == 404:
@@ -264,7 +252,3 @@ if __name__ == '__main__':
     args = parser.parse_args()
     main(args)
     badgegetter.main()
-
-# update help message
-# import webbrowser, os
-# webbrowser.open('file://' + os.path.realpath("filename.html"))
